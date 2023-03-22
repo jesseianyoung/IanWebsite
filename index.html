@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ian's Service</title>
+
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="shortcut icon" href="image/logo-normal.png" type="image/x-icon" sizes="32x3">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+    <link rel="stylesheet" type="text/css" href="./css/flickity.css">
+
+</head>
+
+<style>
+
+.typing-text {
+        font-size: 20px;
+        color: black;
+    }
+	
+    .container {
+        color: black;
+        width: 85%;
+        margin: auto;
+        margin-top: 30px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 30px;
+    }
+	
+	 .container-1{
+        color: black;
+        width: 85%;
+        margin: auto;
+        margin-top: 30px;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 30px;
+    }
+
+    li {
+        margin-bottom: 5px;
+    }
+
+ li#terms:hover {
+        border: none !important;
+    }
+	
+	@media (max-width: 768px) {
+        .container {
+            grid-template-columns: 1fr;
+        }
+
+        .banner-img {
+            display: block;
+            margin: 0 auto;
+        }
+
+        .banner{
+            margin-bottom: -300px;
+        }
+
+    }
+
+    .gallery:hover {
+        animation: wiggle 2s linear;
+    }
+
+    @keyframes wiggle {
+
+        0%,
+        7% {
+            transform: rotateZ(0);
+        }
+
+        15% {
+            transform: rotateZ(-15deg);
+        }
+
+        20% {
+            transform: rotateZ(10deg);
+        }
+
+        25% {
+            transform: rotateZ(-10deg);
+        }
+
+        30% {
+            transform: rotateZ(6deg);
+        }
+
+        35% {
+            transform: rotateZ(-4deg);
+        }
+
+        40%,
+        100% {
+            transform: rotateZ(0);
+        }
+    }
+
+    /* Use a media query to adjust the grid for medium-sized screens */
+    @media (max-width: 768px) {
+        .container {
+            grid-template-columns: 1fr;
+        }
+    }
+
+
+    .gallery {
+        background: #FFF;
+    }
+
+    .gallery-cell {
+        width: 100%;
+        height: 390px;
+        counter-increment: gallery-cell;
+    }
+
+
+    .column p {
+        margin-bottom: 12px;
+    }
+
+    .column h2 {
+        margin-top: 15px;
+    }
+	
+	
+
+
+</style>
+
+<body class="show">
+    <header style="background-color: #00BFFF; color:whitesmoke">
+        <a href="index.html">
+            <img src="./pics/logo.png" alt="" class="logo">
+        </a>
+        <div class="toggle" onclick="toggleMenu()"></div>
+        <ul class="menu" id="myDIV">
+	
+            <li class="lnk active"><a href="#index"><i class="bi bi-house"></i> HOME</a></li>
+            <li class="lnk"> <a href="#services"><i class="bi bi-camera"></i> SERVICES</a></li>
+            <li class="lnk"><a href="#terms"><i class="bi bi-file-ruled"></i></i> TERMS</a></li>
+            <li class="lnk"><a href="#contact"><i class="bi bi-person-lines-fill"></i> CONTACT ME</a></li>
+	
+        </ul>
+    </header>
+	
+	<div class="section one" id="index">
+	<div class="container">
+        <div class="column">
+            <section class="banner" id="home">
+                <div class="textBx" style="animation: slide-bottom 2.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;">
+                    <h2>Hi! , I'm<br><span>IAN</span></h2>
+                    <p id="typing-text" class="typing-text"></p>
+                  <a href="#services" class="btn">
+                        VIEW SERVICES</a>
+                </div>
+            </section>
+        </div>
+
+        <div class="column">
+            <img src="./pics/banner-img.png" alt="" style="margin-top: 50px;" class="banner-img">
+        </div>
+    </div>
+
+
+    <script>
+        const typingText = document.getElementById("typing-text");
+        const text =
+            "Nice to meet you. I'm currently at my 4th year high school. I'm here to help you when it comes to art";
+        let index = 0;
+
+        function type() {
+            typingText.textContent += text[index];
+            index++;
+            if (index === text.length) {
+                clearInterval(timer);
+            }
+        }
+
+        const timer = setInterval(type, 25);
+    </script>
+
+    <script src="./js/script.js"></script>
+	</div>
+
+	<div class="section one" id="services">
+    <h2 style="text-align: center; margin-top: 150px;">Services Offered</h2>
+    <div class="container">
+        <div class="column">
+            <h2>Photography</h2>
+            <p>Whether it's capturing stunning landscapes or capturing precious moments with loved ones, my photography
+                services can help you preserve the memories that matter most. With a focus on natural light and
+                authentic moments, I strive to create timeless images that you'll treasure for lifetime.</p>
+
+            <p><i class="bi bi-coin"></i> Price Starts at: ₱ 50</p>
+            <div class="gallery js-flickity" data-flickity-options='{ "wrapAround": true }'>
+
+                <img src="./pics/Photography/1.jpg" class="gallery-cell" alt="" srcset="">
+                <img src="./pics/Photography/2.jpg" class="gallery-cell" alt="" srcset="">
+                <img src="./pics/Photography/3.jpg" class="gallery-cell" alt="" srcset="">
+                <img src="./pics/Photography/4.jpg" class="gallery-cell" alt="" srcset="">
+                <img src="./pics/Photography/5.jpg" class="gallery-cell" alt="" srcset="">
+
+            </div>
+
+        </div>
+        <div class="column">
+            <h2>Photo Edting</h2>
+            <p>From basic touch-ups to complex enhancements, my photo editing services can help take your photos to the
+                next level. With an eye for detail and a commitment to quality, I can help you achieve the perfect look
+                and feel for your photos.</p>
+
+            <p><i class="bi bi-coin"></i> Price Starts at: ₱ 30</p>
+
+            <div class="gallery js-flickity" data-flickity-options='{ "wrapAround": true }'>
+
+                <img src="./pics/Photo edits/1.jpg" class="gallery-cell" alt="" srcset="">
+                <img src="./pics/Photo edits/2.jpg" class="gallery-cell" alt="" srcset="">
+                <img src="./pics/Photo edits/3.jpg" class="gallery-cell" alt="" srcset="">
+                <img src="./pics/Photo edits/4.jpg" class="gallery-cell" alt="" srcset="">
+                <img src="./pics/Photo edits/5.jpg" class="gallery-cell" alt="" srcset="">
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <div class="container">
+        <div class="column">
+            <h2 class="primary">Digital Art</h2>
+            <p>From basic touch-ups to complex enhancements, my photo editing services can help take your photos to the
+                next level. With an eye for detail and a commitment to quality, I can help you achieve the perfect look
+                and feel for your photos.</p>
+
+            <p><i class="bi bi-coin"></i> Price Starts at: ₱ 150</p>
+
+            <div class="gallery js-flickity" data-flickity-options='{ "wrapAround": true }'>
+
+                <img src="./pics/Digital art/1.png" class="gallery-cell" alt="" srcset="">
+                <img src="./pics/Digital art/2.jpeg" class="gallery-cell" alt="" srcset="">
+                <img src="./pics/Digital art/3.jpeg" class="gallery-cell" alt="" srcset="">
+
+            </div>
+        </div>
+        <div class="column">
+            <h2>Traditional Art</h2>
+            <p>Using a range of mediums including pencil, paint, and ink, I create beautiful, handcrafted pieces of art
+                that are truly one-of-a-kind. From portraits to landscapes, my traditional art can help add a unique
+                touch to any space using my skills.</p>
+
+            <p><i class="bi bi-coin"></i> Price Starts at: ₱ 200</p>
+
+            <div class="gallery js-flickity" data-flickity-options='{ "wrapAround": true }'>
+
+                <img src="./pics/Traditional art/1.jpeg" class="gallery-cell" alt="" srcset="">
+
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="column">
+            <h2>Painting</h2>
+            <p>With a passion for color and texture, my painting services can help bring your ideas to life in vivid,
+                stunning detail. Whether it's a large-scale mural or a small canvas painting, I work with you to create
+                a piece that speaks to your unique vision and style.</p>
+
+            <p><i class="bi bi-coin"></i> Price Starts at: ₱ 300</p>
+
+            <div class="gallery js-flickity" data-flickity-options='{ "wrapAround": true }'>
+
+                <img src="./pics/Painting/1.jpeg" class="gallery-cell" alt="" srcset="">
+
+            </div>
+
+        </div>
+    </div>
+	</div>
+	
+	<div class="section one" id="terms">
+	<h2 style="text-align: center; margin-top: 150px;">Terms and Conditions</h2>
+    <div class="container">
+
+        <div class="column">
+            <img src="./pics/terms.png" alt="">
+        </div>
+
+        <div class="column">
+            <ol>
+                <li id="terms"><b>Deposit and Payment:</b> The Client shall make a booking fee as per contract to retain the
+                    Studio to
+                    perform the services specified in the contract.</li>
+                <li id="terms"><b>Cancellation: </b>If the Client shall cancel this Agreement more than six (6) calendar days before the
+                    photo
+                    shooting day, any booking fee paid to the Photographer shall be refunded in full if the Photographer
+                    is
+                    able to re-book the same date. If the Photographer is NOT able to secure another client for the
+                    date, or
+                    if the cancellation occurs less than six (6) calendar days before the portrait date, the Client
+                    forfeits
+                    the booking fee.</li>
+                <li id="terms"><b>Photographic Materials and Copyright:</b> All photographic materials, such as original negatives,
+                    photos, or
+                    slides, shall be the exclusive property of the Photographer. The Photographer shall own the
+                    copyright in
+                    all images created and may use the work for samples, contests, exhibition, advertising and
+                    self-promotion. Usage outside the bounds of this agreement will require the Client’s consent.</li>
+                <li id="terms"><b>Client’s Usage: </b>The Client is obtaining prints for personal use only, and shall not sell said prints
+                    or
+                    authorize any reproductions thereof by parties other than the Photographer. If Client is obtaining a
+                    print for reproduction, Photographer authorizes Client to reproduce the print only as set forth
+                    under
+                    Special Usage Requirements. In such event, Client shall request that a copyright and credit notice
+                    for
+                    the Photographer be placed adjacent to the photograph on publication, but shall have no liability if
+                    the
+                    publication refuses or omits to do so.</li>
+
+            </ol>
+        </div>
+
+    </div>
+
+    <div class="container-1">
+        <div class="column">
+            <ol start="5">
+                <li id="terms"><b>Social Media:</b> This clause applies to all social media, including Facebook and blogs. When published
+                    online it is required that citation of photographer be made. The client agrees that they will under
+                    no
+                    circumstances alter any photographs that are placed in public on the internet. The client agrees to
+                    be
+                    responsible for any family member or friend who posts our photographs online and agrees that they
+                    cannot
+                    be cropped (with the exception of the forced cropping for Facebook’s Timeline), altered in color, or
+                    edited in any way.</li>
+                <li id="terms"><b>Failure to Perform: </b> the Photographer cannot perform this Agreement due to a fire or other
+                    casualty,
+                    strike, or other cause beyond the control of the parties, or due to the Photographer’s illness, then
+                    the
+                    Photographer shall return any funds previously paid to the Client but shall have no further
+                    liability
+                    with respect to the Agreement. This limitation on liability shall also apply in the event that
+                    photographic materials are damaged in processing, lost through camera malfunction, lost in the mail,
+                    or
+                    otherwise lost or damaged without fault on the part of the Photographer. In the event the
+                    Photographer
+                    fails to perform for any other reason, the Photographer shall not be liable for any amount in excess
+                    of
+                    the retail value of the Client’s order.</li>
+                <li id="terms"><b>High-Resolution: </b>Images deliverable in High-Resolution (or known as High-Res) are 300DPI with 3000
+                    Pixels in the longest edge.</li>
+                <li id="terms">Forever Yours Photography keeps client files for up to 2 years after the photography session, and is
+                    not
+                    liable for any claims after this period. All client files will be deleted and backups will be purged
+                    after this period.</li>
+                <li id="terms"><b>Liability: </b>It is client’s responsibility to take care of the children; Forever Yours Photography
+                    will
+                    not accept any responsibility due to any accident to children or damage to public or private
+                    properties
+                    during the photo shooting or consultation session.</li>
+                <li id="terms">It is understood that no other photographer, amateur or professional, shall be allowed to photograph
+                    at
+                    the venue (wedding, portrait, family photography , etc.) while Forever Yours Photography is working,
+                    and
+                    that any breach of this agreement will constitute a reason for non-completion of the job with no
+                    liability to the Photographer and loss of initial deposit by the client. </li>
+                <li id="terms">Client accepts that all photographs will be taken and edited at the photographer’s discretion based
+                    on
+                    the photographer’s experience and artistic view. If the client has special requests shall create a
+                    “shot
+                    list” of all shots that they require.</li>
+                <li id="terms">All deliverable images as per contract will have standard image editing (including: light skin
+                    retouch,
+                    light and colour adjustments). Any extra edits requested by the client will cost the client $35 per
+                    image if accepted by the Photographer. </li>
+            </ol>
+        </div>
+    </div>
+	</div>
+	<div class="section one" id="contact">
+	
+	<h2 style="text-align: center; margin-top: 150px;">Contact Me</h2>
+
+    <div class="container">
+        <div class="column">
+            <img src="./pics/contact.png" alt="" srcset="">
+
+        </div>
+        <div class="column">
+			 <p><i class="bi bi-facebook"></i> <a href="https://www.instagram.com/ian_dc28/?igshid=ZDdkNTZiNTM%3D" target="_blank">Ian's Photography</a></p>
+            <p><i class="bi bi-instagram"></i> <a href="https://www.facebook.com/christianronn.delossantos?mibextid=ZbWKwL" target="_blank">@ian_photographs</a></p>
+            <iframe
+                src="https://forms.office.com/Pages/ResponsePage.aspx?id=eiWniXQcIUS2JXWp9WxCxPElZy7k141JmiSqb3l7Q9xUODc3UVNOV1ZVRkQ1UkRFWk42M1kwSjdWVi4u"
+                width="100%" height="300"></iframe>
+        </div>
+
+    </div>
+	</div>
+	
+    <script src="./js/script.js"></script>
+    <script src="./js/flickity.pkgd.js"></script>
+    <footer id="footer">
+        <p>Copyright @ Ian's Services 2023 || All Rights Reserved</p>
+    </footer>
+
+</body>
+
+
+
+</html>
